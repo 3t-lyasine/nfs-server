@@ -14,4 +14,4 @@ RUN chown -R nobody:nogroup /mnt/nfs_share/
 RUN chmod 777 /mnt/nfs_share/
 RUN echo '/mnt/nfs_share  *(rw,sync,no_subtree_check)' >> /etc/exports
 RUN exportfs -a
-RUN systemctl restart nfs-kernel-server
+RUN /etc/init.d/nfs-kernel-server restart
