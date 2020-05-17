@@ -15,3 +15,5 @@ RUN chmod 777 /mnt/nfs_share/
 RUN echo '/mnt/nfs_share  *(rw,sync,no_subtree_check)' >> /etc/exports
 RUN exportfs -a
 RUN /etc/init.d/nfs-kernel-server restart
+VOLUME ["/mnt/nfs_share"]
+EXPOSE 111
