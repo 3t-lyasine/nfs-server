@@ -16,4 +16,5 @@ RUN echo '/mnt/nfs_share  *(rw,sync,no_subtree_check)' >> /etc/exports
 RUN exportfs -a
 RUN /etc/init.d/nfs-kernel-server restart
 VOLUME ["/mnt/nfs_share"]
-EXPOSE 111
+# NFS ports and portmapper
+EXPOSE 2049 38465-38467 662 111/udp 111
